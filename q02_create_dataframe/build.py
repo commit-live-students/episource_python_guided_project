@@ -7,6 +7,9 @@ from greyatomlib.episource_python_guided_project.q01_load_data.build import q01_
 path = 'data/episource.txt'
 
 
-def q02_create_dataframe():
-
-
+def q02_create_dataframe(path):
+    data, wordcount = q01_load_data(path)
+    regex = re.compile('[^a-zA-Z]')
+    text = regex.sub(' ', data)
+    cnt = Counter(text.split())
+    return pd.DataFrame(list(cnt.items()), columns=['words', 'count'])
