@@ -2,6 +2,8 @@
 
 path = 'data/episource.txt'
 
+def q01_load_data(path):
+    with open(path, mode='r') as f:
+        data = f.read()
 
-def q01_load_data():
- 
+    return data, len(data.split())
