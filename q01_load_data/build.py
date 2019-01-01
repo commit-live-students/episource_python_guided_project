@@ -1,7 +1,14 @@
 
+# %load q01_load_data/build.py
 
 path = 'data/episource.txt'
 
+def q01_load_data(path):
+    file = open(path, 'r')
+    data = file.read()
+    length = len(data.split())
+    return data, length
 
-def q01_load_data():
- 
+# q01_load_data(path)
+
+
